@@ -29,7 +29,7 @@ pipeline{
         }
         stage('Report'){
             steps{
-                echo "$params.CHANGELOG" > report.txt
+                // echo "$params.CHANGELOG" > report.txt
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
             }
         }
