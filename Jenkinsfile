@@ -1,33 +1,38 @@
 pipeline{
     agent any
     parameters{
-        string(
-            name: 'Student_Name',
-            defaultValue: 'Prathmesh',
+        text(
+            name: 'CHANGELOG',
             description: 'Enter Name of Student.'
         )
+        choice(
+            name: 'ENVIRONMENT',
+            choices: ['DEVELOPMENT', 'STAGING', 'PRODUCTION'],
+            defaultValue: 'DEVELOPMENT',
+            description: 'Select any one.'
+        )
         password(
-            name: 'Username',
-            defaultValue: 'hello@23',
+            name: 'API_KEY',
+            defaultValue: '123ABC',
             description: 'Password Hidden.'
         )
     }
     stages{
-        stage('Build'){
-            steps{
-                echo 'Building the application...'
-                echo "${params.Username}"
-                echo "${params.Student_Name}"
-            }
-        }
-        stage('Test'){
-            steps{
-                echo 'Testing the application...'
-            }
-        }
         stage('Deploy'){
             steps{
-                echo 'Deploying the application...'
+                when{
+                    expression{
+                        pramas.ENVIRONMENT == "PRODUCTION"
+                    }
+                    echo "DEPLOYING into PRODUCTION...inside when condition"
+                }
+                echo "DEPLOYING into PRODUCTION...outside when condition"
+            }
+        }
+        stage('Report'){
+            steps{
+                echo "${params.CHANGELOG}" > report.txt
+                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
