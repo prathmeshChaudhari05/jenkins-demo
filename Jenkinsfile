@@ -28,6 +28,12 @@ pipeline{
                 echo "DEPLOYING into PRODUCTION...outside when the condition"
             }
         }
+        stage('Report'){
+            steps{
+                echo "${params.CHANGELOG}" > report.txt
+                echo "Done Successfully..."
+            }
+        }
     }
     post{
         success{
