@@ -19,14 +19,12 @@ pipeline{
     }
     stages{
         stage('Deploy'){
-            steps{
                 when{
                     expression{
                         pramas.ENVIRONMENT == "PRODUCTION"
                     }
                 }
-                echo "DEPLOYING into PRODUCTION...outside when condition"
-            }
+                echo "DEPLOYING into PRODUCTION...outside when the condition"
         }
     }
     post{
