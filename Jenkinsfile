@@ -21,7 +21,7 @@ pipeline{
         stage('Deploy'){
                 when{
                     expression{
-                        pramas.ENVIRONMENT == "PRODUCTION"
+                        params.ENVIRONMENT == "PRODUCTION"
                     }
                 }
                 echo "DEPLOYING into PRODUCTION...outside when the condition"
