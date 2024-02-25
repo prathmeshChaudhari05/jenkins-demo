@@ -34,7 +34,7 @@ pipeline{
                 sh "printf \"This is a change log.\" > report.txt"
                 
                 echo "Done Successfully..."
-                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
+                // archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
