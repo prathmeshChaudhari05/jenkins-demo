@@ -24,7 +24,9 @@ pipeline{
                         params.ENVIRONMENT == "PRODUCTION"
                     }
                 }
+            steps{
                 echo "DEPLOYING into PRODUCTION...outside when the condition"
+            }
         }
     }
     post{
