@@ -1,5 +1,17 @@
 pipeline{
     agent any
+    parameters{
+        string(
+            name: 'Student Name',
+            defaultValue: 'Prathmesh'
+            description: 'Enter Name of Student.'
+        )
+        password(
+            name: 'Username'
+            defaultValue: 'hello@23'
+            description: 'Password Hidden.'
+        )
+    }
     stages{
         stage('Build'){
             steps{
