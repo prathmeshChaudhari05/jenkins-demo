@@ -31,10 +31,10 @@ pipeline{
         stage('Report'){
             steps{
                 echo "Started Successfully..."
-                // writeFile file: 'report.txt', text: "this is the report"
-                echo "$params.CHANGELOG" >> report.txt
+                writeFile file: 'report.txt', text: "this is the report"
+                echo "$params.CHANGELOG"
                 echo "Done Successfully..."
-                // archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
+                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
