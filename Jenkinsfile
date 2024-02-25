@@ -8,7 +8,6 @@ pipeline{
         choice(
             name: 'ENVIRONMENT',
             choices: ['DEVELOPMENT', 'STAGING', 'PRODUCTION'],
-            defaultValue: 'DEVELOPMENT',
             description: 'Select any one.'
         )
         password(
