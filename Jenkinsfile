@@ -28,12 +28,6 @@ pipeline{
                 echo "DEPLOYING into PRODUCTION...outside when condition"
             }
         }
-        stage('Report'){
-            steps{
-                // echo "$params.CHANGELOG" > report.txt
-                // archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
-            }
-        }
     }
     post{
         success{
