@@ -31,7 +31,7 @@ pipeline{
         stage('Report'){
             steps{
                 echo "Started Successfully..."
-                sh "printf \"This is a change log.\" > report.txt"
+                echo "this is report" >> report.txt
                 
                 echo "Done Successfully..."
                 // archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
