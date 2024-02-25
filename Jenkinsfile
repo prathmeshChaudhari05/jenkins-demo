@@ -3,6 +3,7 @@ pipeline{
     parameters{
         text(
             name: 'CHANGELOG',
+            defaultValue: 'This is default value for text'
             description: 'Enter Name of Student.'
         )
         choice(
@@ -30,7 +31,7 @@ pipeline{
         stage('Report'){
             steps{
                 // echo "$params.CHANGELOG" > report.txt
-                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
+                // archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
