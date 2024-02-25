@@ -2,7 +2,7 @@ pipeline{
     agent any
     parameters{
         string(
-            name: 'Student Name',
+            name: 'Student_Name',
             defaultValue: 'Prathmesh',
             description: 'Enter Name of Student.'
         )
@@ -16,6 +16,8 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building the application...'
+                echo "${params.Username}"
+                echo "${params.Student_Name}"
             }
         }
         stage('Test'){
