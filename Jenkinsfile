@@ -3,12 +3,12 @@ pipeline{
     parameters{
         string(
             name: 'Student Name',
-            defaultValue: 'Prathmesh'
+            defaultValue: 'Prathmesh',
             description: 'Enter Name of Student.'
         )
         password(
-            name: 'Username'
-            defaultValue: 'hello@23'
+            name: 'Username',
+            defaultValue: 'hello@23',
             description: 'Password Hidden.'
         )
     }
