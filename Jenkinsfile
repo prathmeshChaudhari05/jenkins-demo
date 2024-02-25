@@ -30,7 +30,7 @@ pipeline{
         }
         stage('Report'){
             steps{
-                echo "${params.CHANGELOG}" > report.txt
+                echo "$params.CHANGELOG" >> report.txt
                 echo "Done Successfully..."
             }
         }
