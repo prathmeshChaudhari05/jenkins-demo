@@ -3,7 +3,7 @@ pipeline{
     parameters{
         text(
             name: 'CHANGELOG',
-            defaultValue: 'This is default value for text'
+            defaultValue: 'This is the default value for text',
             description: 'Enter Name of Student.'
         )
         choice(
